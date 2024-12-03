@@ -18,24 +18,23 @@ extract_mult <- function(data) {
     sum()
 }
 
-# data |>
-#   str_remove_all("don't\\(\\).*do\\(\\)") |>
-#   str_remove("don't\\(\\).*$") |>
-#   extract_mult()
+data |>
+  str_remove_all("don't\\(\\).*?do\\(\\)") |>
+  extract_mult()
 
-temp <- data |>
-  str_extract_all("mul\\(\\d+,\\d+\\)|don't\\(\\)|do\\(\\)") |>
-  unlist()
+# temp <- data |>
+#   str_extract_all("mul\\(\\d+,\\d+\\)|don't\\(\\)|do\\(\\)") |>
+#   unlist()
 
-do <- TRUE
-saved <- c()
+# do <- TRUE
+# saved <- c()
 
-for (entry in temp) {
-  if (entry == "don't()") {
-    do <- FALSE
-  } else if (entry == "do()") {
-    do <- TRUE
-  } else if (do) saved <- c(saved, entry)
-}
+# for (entry in temp) {
+#   if (entry == "don't()") {
+#     do <- FALSE
+#   } else if (entry == "do()") {
+#     do <- TRUE
+#   } else if (do) saved <- c(saved, entry)
+# }
 
-saved |> extract_mult()
+# saved |> extract_mult()
