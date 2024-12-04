@@ -15,7 +15,7 @@ get_all_diagonals <- function(m) {
   n <- nrow(m)
   diagonals <- list()
 
-  for (d in -(n - 1):(n - 1)) {
+  for (d in -(n - 3):(n - 3)) {
     diagonals[[as.character(d)]] <- paste0(m[row(m) - col(m) == d], collapse = "")
     diagonals[[paste0("reversed_", as.character(d))]] <- paste0(m[row(m) + col(m) == (n - 1 + d)], collapse = "")
   }
