@@ -1,5 +1,5 @@
-temp = readlines("./Day06/example.txt")
-# temp = readlines("./inputs/06.txt")
+# temp = readlines("./Day06/example.txt")
+temp = readlines("./inputs/06.txt")
 
 border = length(temp)
 temp = [collect(line) for line in temp]
@@ -29,7 +29,6 @@ while true
     end
 
     pos = pos + move
-    println(pos)
 end
 
 length(findall(x -> x == 'X', guard_map))
@@ -81,12 +80,9 @@ function is_loop(guard_map, O)
     end
 end
 
-
 empty_positions = findall(x -> x == '.', guard_map)
-
-using Base.Threads
 results = zeros(Int, length(empty_positions))
-@threads for i in eachindex(empty_positions)
+Threads.@threads for i in eachindex(empty_positions)
     results[i] = is_loop(guard_map, empty_positions[i])
 end
 sum(results)
