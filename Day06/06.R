@@ -21,7 +21,6 @@ while (TRUE) {
   if (guard_map[temp[1], temp[2]] == "#") move <- turn(move)
 
   pos <- pos + move
-  print(pos)
 }
 
 sum(guard_map == "X")
