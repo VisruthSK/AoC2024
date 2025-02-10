@@ -1,3 +1,3 @@
-[submodule "inputs"]
-	path = inputs
+[submodule "AoC2024Inputs"]
+	path = AoC2024Inputs
 	url = https://github.com/VisruthSK/AoC2024Inputs
